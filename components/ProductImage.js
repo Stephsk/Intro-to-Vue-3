@@ -1,13 +1,12 @@
-app.component('product-image', {
-    props: {
-        image: {
-            type: String
-        }
+app.component("product-image", {
+  props: {
+    path: {
+      type: String,
     },
-    template:
-        /*html*/
-        `<div class="product-image">
-        <img :src="image">
-      </div>`
-})
-
+  },
+  template:
+    /*html*/
+    `<div class="product-image">
+        <img :src="path">
+      </div>`,
+});
