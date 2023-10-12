@@ -12,7 +12,7 @@ app.component("product-display", {
           <product-image :path="image"/>
           <div class="product-info">
            <product-title :title="title"/>
-            <stock-availability :availability="inStock"/>
+            <stock-availability :availability="inStockQuantity"/>
             <shipping-info :shipping="shipping"/>
             <product-details :details="details"/>
             <product-variant-list :list="variants" :onClick="updateVariant"/>
@@ -56,12 +56,12 @@ app.component("product-display", {
   },
   computed: {
     title() {
-      return this.brand + " " + this.product;
+      return `${this.brand} + ${this.product}`;
     },
     image() {
       return this.variants[this.selectedVariant].image;
     },
-    inStock() {
+    inStockQuantity() {
       return this.variants[this.selectedVariant].quantity;
     },
     shipping() {
