@@ -13,11 +13,12 @@ app.component("product-display", {
           <div class="product-info">
            <product-title :title="title"/>
             <stock-availability :availability="inStockQuantity"/>
+            <product-button-remove :inStockQuantity="inStockQuantity" :removeFromCart= "removeFromCart" />
             <shipping-info :shipping="shipping"/>
             <product-details :details="details"/>
             <product-variant-list :list="variants" :onClick="updateVariant"/>
-            <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" v-on:click="addToCart">Add to Cart</button>
-           <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" v-on:click="removeFromCart">Remove from Cart</button>
+            <product-button-add :inStockQuantity="inStockQuantity" :addToCart="addToCart"/>
+            
           </div>
         </div>
       </div>`,
