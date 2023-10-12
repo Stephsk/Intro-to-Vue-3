@@ -13,11 +13,12 @@ app.component("product-display", {
           <div class="product-info">
            <product-title :title="title"/>
             <stock-availability :availability="inStockQuantity"/>
-            <product-button-remove :inStockQuantity="inStockQuantity" :removeFromCart= "removeFromCart" />
+            <product-button :inStockQuantity="inStockQuantity" :addToCart="removeFromCart" :text="text1"/>
             <shipping-info :shipping="shipping"/>
             <product-details :details="details"/>
             <product-variant-list :list="variants" :onClick="updateVariant"/>
-            <product-button-add :inStockQuantity="inStockQuantity" :addToCart="addToCart"/>
+            <product-button :inStockQuantity="inStockQuantity" :addToCart="addToCart" :text="text"/>
+            
             
           </div>
         </div>
@@ -70,6 +71,12 @@ app.component("product-display", {
         return "Free";
       }
       return 2.99;
+    },
+    text(){
+      return "Add to Cart"
+    },
+    text1(){
+      return "Remove From Cart"
     },
   },
 });

@@ -1,21 +1,25 @@
-app.component('product-button-remove', {
+app.component('product-button', {
     props: {
         inStockQuantity:{
             type:Number
         },
-        
-        removeFromCart:{
+        addToCart:{
             type:Function
+        },
+        text:{
+            type:String
         }
+       
     },
     template:
         /*html*/
         `
+     
         <button 
         class="button" 
         :class="{ disabledButton: !inStockQuantity }" 
         :disabled="!inStockQuantity" 
-        v-on:click="removeFromCart">Remove from Cart</button>
+        v-on:click="addToCart">{{text}}</button>
         `
 
 }) 
